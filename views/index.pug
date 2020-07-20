@@ -1,0 +1,32 @@
+extends layout
+
+block variables
+  script.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'dataLayer-init',
+      'random': Math.random(),
+      'server_name': '#{name}',
+      'page_name': '/homepage'
+    });
+
+block layout-content
+  div.card-deck.mb-3.text-center
+    div.card.mb-4.box-shadow
+      div.card-header
+        h4.my-0.font-weight-normal Server Delivered Content
+      div.card-body.text-muted via HTTP 200 Response:
+
+        div
+          -
+            var content = Math.random()
+            console.log("This prints to server logs:", content)
+          p#server_content.btn.btn-secondary=content
+
+    div.card.mb-4.box-shadow
+      div.card-header
+        h4.my-0.font-weight-normal GTM Delivered Content
+      div.card-body.text-muted via GTM Injection:
+
+        div
+          p#gtm_content.btn.btn-secondary waiting for update...
