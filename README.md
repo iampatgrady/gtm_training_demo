@@ -1,6 +1,5 @@
 # GTM Training Demo
-by: Pat Grady  
-Adswerve   
+by Pat Grady for Adswerve
 
 ## INSTALL
 Have Node.js installed with the `npm` package manager,  https://nodejs.org/en/download/  
@@ -18,7 +17,7 @@ Edit line 1 of the `app.js` to include your GTM container ID:
 ```JavaScript
 const gtm_container_id = "GTM-REPLACE"
 // becomes
-const gtm_container_id = "GTM-M4RX7C7"
+const gtm_container_id = "GTM-XYZ123"
 ```
 
 ## DEMO
