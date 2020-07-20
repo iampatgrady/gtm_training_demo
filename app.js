@@ -1,4 +1,12 @@
+/*
+  author: Pat Grady
+  company: Adswerve
+  date: 2020-7-20
+*/
+
+// Update this to your GTM Container ID
 const gtm_container_id = "GTM-REPLACE"
+
 const express = require('express');
 const path = require("path");
 const favicon = require('express-favicon');
@@ -12,6 +20,9 @@ app.set("view engine", "pug");
 
 app.get('/', (req,res,next) => {
   res.render("index", {section: "GTM Training", name: "Homepage", container: gtm_container_id })
+});
+app.get('/faq', (req,res,next) => {
+  res.render("faq", {section: "GTM Training", name: "FAQ", container: gtm_container_id })
 });
 
 if (process.env.NODE_ENV !== 'test') {

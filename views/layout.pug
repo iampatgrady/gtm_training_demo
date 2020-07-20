@@ -5,6 +5,7 @@ html
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     link(rel="shortcut icon", href="/favicon.ico")
+    // css reference: https://getbootstrap.com/docs/4.0/examples/pricing/
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
 
     title #{section} | #{name}
@@ -19,11 +20,11 @@ html
   body
     div.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.box-shadow
       h3.my-0.mr-md-auto.font-weight-normal GTM Training
-
-    div.px-3.py-3.pt-md-2.pb-md-4.mx-auto.text-center
-      h1.display-4 Instructions
-      p.lead Use the Chrome Developer Tools in conjunction with the Adswerve DataLayer Inspector+ Chrome Extension
-
+      nav.my-2.my-md-0.mr-md-3
+        a.p-2.text-dark(href="/") Home
+        a.p-2.text-dark(href="/faq") FAQ
+        a#nav-cta.btn.btn-outline-primary.ml-md-3(href="#") CTA
+      
     div.container
       block layout-content
 
