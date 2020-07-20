@@ -10,7 +10,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 app.get('/', (req,res,next) => {
-  res.render("index", {section: "GTM Training", name: "Homepage"})
+  res.render("index", {section: "GTM Training", name: "Homepage", container: "GTM-M4RX7C7"})
 });
 
 
