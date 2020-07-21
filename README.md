@@ -1,6 +1,8 @@
 # GTM Training Demo
 by Pat Grady for Adswerve  
-![Node.js CI](https://github.com/iampatgrady/gtm_training_demo/workflows/Node.js%20CI/badge.svg?branch=master)
+
+
+![Node.js CI](https://github.com/iampatgrady/gtm_training_demo/workflows/Node.js%20CI/badge.svg?event=push)
 
 ## INSTALL
 Have Node.js installed with the `npm` package manager,  https://nodejs.org/en/download/  
