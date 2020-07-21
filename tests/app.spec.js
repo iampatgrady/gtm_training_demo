@@ -11,10 +11,10 @@ describe('Sample Test', () => {
   });
 });
 
-describe('Testing Web App: /', () => {
-  it('should respond 200 status to GET request for /', async done => {
-    const response = await request(app).get('/');
-    expect(response.statusCode).toBe(200);
+describe('Testing Web App: 404', () => {
+  it('should respond 404 status to GET request for /404', async done => {
+    const response = await request(app).get('/404');
+    expect(response.statusCode).toBe(404);
     done();
   });
 
@@ -25,6 +25,14 @@ describe('Testing Web App: /', () => {
       .set('Content-Type', 'application/json')
       .send(JSON.stringify([{name: 'testing', value: '12'}]));
     expect(response.statusCode).toBe(404);
+    done();
+  });
+});
+
+describe('Testing Web App: /', () => {
+  it('should respond 200 status to GET request for /', async done => {
+    const response = await request(app).get('/');
+    expect(response.statusCode).toBe(200);
     done();
   });
 });
