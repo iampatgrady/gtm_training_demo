@@ -1,0 +1,646 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2020-07-21 06:17:03",
+    "containerVersion": {
+        "path": "accounts/6001650626/containers/31963309/versions/1",
+        "accountId": "6001650626",
+        "containerId": "31963309",
+        "containerVersionId": "1",
+        "name": "Pats Sandbox",
+        "container": {
+            "path": "accounts/6001650626/containers/31963309",
+            "accountId": "6001650626",
+            "containerId": "31963309",
+            "name": "GTM for Devs - Web",
+            "publicId": "GTM-KHDQ8K7",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1595285822807",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6001650626/containers/31963309/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "tagId": "4",
+                "name": "GA - Page View",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_PAGEVIEW"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA Settings}}"
+                    }
+                ],
+                "fingerprint": "1595304082274",
+                "firingTriggerId": [
+                    "15"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "tagId": "11",
+                "name": "GA - Send Event",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "{{DL - ga_event_category}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{DL - ga_event_action}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{DL - ga_event_label}}"
+                    }
+                ],
+                "fingerprint": "1595295508718",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "tagId": "13",
+                "name": "GA - Event - Outbound Clicks",
+                "type": "ua",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "nonInteraction",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "overrideGaSettings",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventCategory",
+                        "value": "Outbound Click"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackType",
+                        "value": "TRACK_EVENT"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "gaSettings",
+                        "value": "{{GA Settings}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventAction",
+                        "value": "{{Click URL}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventLabel",
+                        "value": "{{Click ID}}"
+                    }
+                ],
+                "fingerprint": "1595304532365",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "tagId": "16",
+                "name": "Custom HTML - Update Button Value",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  setTimeout(function(){\n    var target = document.getElementById('gtm-target');\n    target.innerHTML = {{Random Number}};\n  },3000);\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1595307590185",
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "triggerId": "9",
+                "name": "Event - ga-event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga-event"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1595305084802"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "triggerId": "12",
+                "name": "Outbound Click",
+                "type": "LINK_CLICK",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{AE - Is Outbound}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "autoEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{Page URL}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": ".*"
+                            }
+                        ]
+                    }
+                ],
+                "waitForTags": {
+                    "type": "BOOLEAN",
+                    "value": "true"
+                },
+                "checkValidation": {
+                    "type": "BOOLEAN",
+                    "value": "false"
+                },
+                "waitForTagsTimeout": {
+                    "type": "TEMPLATE",
+                    "value": "2000"
+                },
+                "uniqueTriggerId": {
+                    "type": "TEMPLATE"
+                },
+                "fingerprint": "1595303639710"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "triggerId": "15",
+                "name": "Event - ga-pageview",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga-pageview"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1595305098500"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "triggerId": "17",
+                "name": "DOM Ready - Homepage Pageview",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "CONTAINS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{DL - page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "/homepage"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1595307044088"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "3",
+                "name": "GA Settings",
+                "type": "gas",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "cookieDomain",
+                        "value": "auto"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "doubleClick",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setTrackerName",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useDebugVersion",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "fieldsToSet",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "fieldName",
+                                        "value": "page"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{DL - page_name}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "useHashAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "decorateFormsAutoLink",
+                        "value": "false"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableLinkId",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "dimension",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "index",
+                                        "value": "1"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "dimension",
+                                        "value": "{{Container ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableEcommerce",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "trackingId",
+                        "value": "UA-140398676-7"
+                    }
+                ],
+                "fingerprint": "1595296603436"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "6",
+                "name": "DL - page_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "/no_page"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_name"
+                    }
+                ],
+                "fingerprint": "1595286487984",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "7",
+                "name": "DL - ga_event_action",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "not set"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ga_event_action"
+                    }
+                ],
+                "fingerprint": "1595295320536",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "8",
+                "name": "DL - ga_event_label",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "not set"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ga_event_label"
+                    }
+                ],
+                "fingerprint": "1595295347835",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "10",
+                "name": "DL - ga_event_category",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "not set"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ga_event_category"
+                    }
+                ],
+                "fingerprint": "1595295501607",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "variableId": "14",
+                "name": "AE - Is Outbound",
+                "type": "aev",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "varType",
+                        "value": "URL"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "IS_OUTBOUND"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "affiliatedDomains",
+                        "value": "localhost,brand.com"
+                    }
+                ],
+                "fingerprint": "1595303540971",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "RANDOM_NUMBER",
+                "name": "Random Number"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            },
+            {
+                "accountId": "6001650626",
+                "containerId": "31963309",
+                "type": "SCROLL_DEPTH_THRESHOLD",
+                "name": "Scroll Depth Threshold"
+            }
+        ],
+        "fingerprint": "1595307617445",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6001650626/containers/31963309/versions/1?apiLink=version"
+    }
+}

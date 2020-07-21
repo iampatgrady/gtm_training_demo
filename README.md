@@ -16,11 +16,11 @@ npm start
 ```
 
 ## ADD GTM
-Edit line 1 of the `app.js` to include your GTM container ID:  
+Edit `app.js` to include your GTM container ID:  
 ```JavaScript
-const gtm_container_id = "GTM-REPLACE"
+const CONTAINER_ID = "GTM-REPLACE"
 // becomes
-const gtm_container_id = "GTM-XYZ123"
+const CONTAINER_ID = "GTM-XYZ123"
 ```
 
 ## DEMO
