@@ -5,12 +5,12 @@
 */
 
 // Update this to your GTM Container ID
-const gtm_container_id = "GTM-KHDQ8K7"
+const CONTAINER_ID = "GTM-KHDQ8K7"
+const PORT = process.env.PORT || '8080';
 
 const express = require('express');
 const path = require("path");
 const favicon = require('express-favicon');
-const PORT = process.env.PORT || '8080';
 const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,10 +19,10 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
 app.get('/', (req,res,next) => {
-  res.render("index", {section: "GTM Training", name: "Homepage", container: gtm_container_id })
+  res.render("index", {section: "GTM Training", name: "Homepage", container: CONTAINER_ID })
 });
 app.get('/faq', (req,res,next) => {
-  res.render("faq", {section: "GTM Training", name: "FAQ", container: gtm_container_id })
+  res.render("faq", {section: "GTM Training", name: "FAQ", container: CONTAINER_ID })
 });
 
 if (process.env.NODE_ENV !== 'test') {
