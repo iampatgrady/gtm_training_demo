@@ -1,14 +1,8 @@
 extends layout
 
-block variables
+block page-analytics
   script.
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'dataLayer-init',
-      'random': Math.random(),
-      'server_name': '#{name}',
-      'page_name': '/faq'
-    });
+    sendGaPageview('/faq', '#{name}')
 
 block layout-content
   div.px-3.py-3.pt-md-1.pb-md-2.mx-auto.text-center

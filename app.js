@@ -5,7 +5,7 @@
 */
 
 // Update this to your GTM Container ID
-const gtm_container_id = "GTM-REPLACE"
+const gtm_container_id = "GTM-KHDQ8K7"
 
 const express = require('express');
 const path = require("path");

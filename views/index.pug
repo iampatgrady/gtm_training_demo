@@ -1,14 +1,19 @@
 extends layout
 
-block variables
+block page-analytics
   script.
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'dataLayer-init',
-      'random': Math.random(),
-      'server_name': '#{name}',
-      'page_name': '/homepage'
-    });
+    sendGaPageview('/homepage', '#{name}')
+  
+    /* GA - Event - Button Click */
+    var btns = document.querySelectorAll('p.test-content')
+    for (var i = 0, btn; btn = btns[i]; i++) {
+      btn.addEventListener("click", function(el){
+        var action = el.target.closest('div.card').firstChild.textContent
+        var label = el.target.textContent
+        pushGaEvent('Button Click', action, label)
+      }, false);
+    }
+    
 
 block layout-content
   div.px-3.py-3.pt-md-1.pb-md-2.mx-auto.text-center
@@ -19,13 +24,13 @@ block layout-content
     div.card.mb-4.box-shadow
       div.card-header
         h4.my-0.font-weight-normal Server Delivered Content
-      div.card-body.text-muted via HTTP 200 Response:
+      div.card-body.text-muted via HTTP Response:
 
         div
           -
             var content = Math.random()
             console.log("This prints to server logs:", content)
-          p#server_content.btn.btn-secondary=content
+          p.test-content.btn.btn-secondary=content
 
     div.card.mb-4.box-shadow
       div.card-header
@@ -33,4 +38,4 @@ block layout-content
       div.card-body.text-muted via GTM Injection:
 
         div
-          p#gtm_content.btn.btn-secondary waiting for update...
+          p#gtm-target.test-content.btn.btn-secondary waiting for update...
