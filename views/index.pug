@@ -23,12 +23,12 @@ block layout-content
       div.card-body.text-muted via GTM Injection:
         div
           p#gtm-target.test-content.btn.btn-secondary waiting for update...
-          
-  block page-analytics
+
+block page-analytics
   //
     script.
       sendGaPageview('/homepage', '#{name}')
-    
+
       /* GA - Event - Button Click */
       var btns = document.querySelectorAll('p.test-content')
       for (var i = 0, btn; btn = btns[i]; i++) {

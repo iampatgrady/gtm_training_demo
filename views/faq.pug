@@ -1,10 +1,10 @@
 extends layout
 
-block page-analytics
-//  script.
-    sendGaPageview('/faq', '#{name}')
-
 block layout-content
   div.px-3.py-3.pt-md-1.pb-md-2.mx-auto.text-center
     h1.display-4 F.A.Q.
     p.lead This is where frequently asked questions should go
+
+block page-analytics
+  //script.
+    sendGaPageview('/faq', '#{name}')
