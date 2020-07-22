@@ -1,20 +1,5 @@
 extends layout
 
-block page-analytics
-  script.
-    sendGaPageview('/homepage', '#{name}')
-  
-    /* GA - Event - Button Click */
-    var btns = document.querySelectorAll('p.test-content')
-    for (var i = 0, btn; btn = btns[i]; i++) {
-      btn.addEventListener("click", function(el){
-        var action = el.target.closest('div.card').firstChild.textContent
-        var label = el.target.textContent
-        pushGaEvent('Button Click', action, label)
-      }, false);
-    }
-    
-
 block layout-content
   div.px-3.py-3.pt-md-1.pb-md-2.mx-auto.text-center
     h1.display-4 Example Website
@@ -25,17 +10,31 @@ block layout-content
       div.card-header
         h4.my-0.font-weight-normal Server Delivered Content
       div.card-body.text-muted via HTTP Response:
-
         div
           -
             // server-side code
             var content = Math.random()
+            console.log("Server generated value:", content)
           p.test-content.btn.btn-secondary=content
 
     div.card.mb-4.box-shadow
       div.card-header
         h4.my-0.font-weight-normal GTM Delivered Content
       div.card-body.text-muted via GTM Injection:
-
         div
           p#gtm-target.test-content.btn.btn-secondary waiting for update...
+          
+  block page-analytics
+  //
+    script.
+      sendGaPageview('/homepage', '#{name}')
+    
+      /* GA - Event - Button Click */
+      var btns = document.querySelectorAll('p.test-content')
+      for (var i = 0, btn; btn = btns[i]; i++) {
+        btn.addEventListener("click", function(el){
+          var action = el.target.closest('div.card').firstChild.textContent
+          var label = el.target.textContent
+          pushGaEvent('Button Click', action, label)
+        }, false);
+      } 
