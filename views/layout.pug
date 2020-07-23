@@ -6,7 +6,7 @@ html
     link(rel="shortcut icon", href="/favicon.ico")
     // css reference: https://getbootstrap.com/docs/4.0/examples/pricing/
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
-    title #{section} | #{name}
+    title #{section_name} | #{common_name}
     script(src="/analytics_utils.js")
     script.
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -30,12 +30,13 @@ html
     footer.pt-4.my-md-5.pt-md-3.border-top
       div.d-flex.justify-content-center
         a.btn.btn-outline-primary(href="https://adswerve.com") Adswerve.com
-
-      
+        
+        
     script.
-    //
+    //-
       document.querySelector('#nav-cta').addEventListener("click", function(){
         pushGaEvent('CTA', 'top nav')
       }, false);
+      
       
     block page-analytics

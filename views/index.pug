@@ -12,7 +12,6 @@ block layout-content
       div.card-body.text-muted via HTTP Response:
         div
           -
-            // server-side code
             var content = Math.random()
             console.log("Server generated value:", content)
           p.test-content.btn.btn-secondary=content
@@ -25,11 +24,11 @@ block layout-content
           p#gtm-target.test-content.btn.btn-secondary waiting for update...
 
 block page-analytics
-  //
+  
     script.
-      sendGaPageview('/homepage', '#{name}')
-
-      /* GA - Event - Button Click */
+    //-
+      sendGaPageview('/homepage', '#{common_name}', '#{section_name}')
+      // GA - Event - Button Click
       var btns = document.querySelectorAll('p.test-content')
       for (var i = 0, btn; btn = btns[i]; i++) {
         btn.addEventListener("click", function(el){

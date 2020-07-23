@@ -20,11 +20,11 @@ app.set("view engine", "pug");
 
 app.get('/', (req,res,next) => {
   /* Controller logic here */
-  res.render("index", {section: "GTM Training", name: "Homepage", container: CONTAINER_ID })
+  res.render("index", {section_name: "GTM Training", common_name: "Homepage", container: CONTAINER_ID })
 });
 
 app.get('/faq', (req,res,next) => {
-  res.render("faq", {section: "GTM Training", name: "FAQ", container: CONTAINER_ID })
+  res.render("faq", {section_name: "GTM Training", common_name: "FAQ", container: CONTAINER_ID })
 });
 
 if (process.env.NODE_ENV !== 'test') {
